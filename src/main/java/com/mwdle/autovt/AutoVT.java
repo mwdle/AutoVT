@@ -1,3 +1,5 @@
+package com.mwdle.autovt;
+
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -24,13 +26,13 @@ public class AutoVT {
 
     // TODO: Setup checks for community scores for uploads.
 
-    public static Duration UPLOAD_TIMEOUT = Duration.ofMinutes(2);
-    public static Duration REPORT_TIMEOUT = Duration.ofSeconds(90);
-    public static Duration CAPTCHA_TIMEOUT = Duration.ofMinutes(10);
+    public static final Duration UPLOAD_TIMEOUT = Duration.ofMinutes(2);
+    public static final Duration REPORT_TIMEOUT = Duration.ofMinutes(3);
+    public static final Duration CAPTCHA_TIMEOUT = Duration.ofMinutes(10);
 
     public static final File currentDir = new File(System.getProperty("user.dir"));
-    public static String detectionsReportFilepath;
-    public static String cleanReportFilepath;
+    private static String detectionsReportFilepath;
+    private static String cleanReportFilepath;
 
     public static void openVT() {
         open("https://www.virustotal.com/");

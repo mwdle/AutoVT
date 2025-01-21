@@ -59,7 +59,7 @@ public class AutoVT {
         try (FileWriter reportFileWriter = new FileWriter(isClean ? cleanReportFilepath : detectionsReportFilepath, true)) {
             String pathOfFileToReport = file.getAbsolutePath();
             reportFileWriter.append("---\n\n### ").append(file.getName()).append("\n")
-                    .append("There were ").append(numberOfDetections.toLowerCase()).append(" detections for: [").append(pathOfFileToReport).append("](<file:///").append(pathOfFileToReport).append(">)\n\n")
+                    .append("There were ").append(numberOfDetections.toLowerCase()).append(" detections for: [").append(pathOfFileToReport).append("](</").append(pathOfFileToReport).append(">)\n\n")
                     .append("[View Report](").append(Selenide.webdriver().driver().url()).append(")\n")
                     .append("![Screenshot of the report](").append("data:image/png;base64,").append(base64Screenshot).append(")\n\n");
         }
@@ -135,12 +135,12 @@ public class AutoVT {
         File cleanReportFile = new File(currentDir.toString().replace(' ', '_'), (new File(dir)).getName() + "_clean_report_" + today + ".md");
         cleanReportFilepath = cleanReportFile.getPath();
         try (FileWriter reportFileWriter = new FileWriter(detectionsReportFile, false)) {
-            reportFileWriter.append("# Virus Total Report\n**This is a Virus Total report for all files that were flagged as malicious from the directory:** [").append(dir).append("](<file:///").append(dir).append(">)\n\n*This report was created on: ").append(today).append("*\n\n");
+            reportFileWriter.append("# Virus Total Report\n**This is a Virus Total report for all files that were flagged as malicious from the directory:** [").append(dir).append("](</").append(dir).append(">)\n\n*This report was created on: ").append(today).append("*\n\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         try (FileWriter reportFileWriter = new FileWriter(cleanReportFile, false)) {
-            reportFileWriter.append("# Virus Total Report\n**This is a Virus Total report for all files that were not flagged by any security vendors from the directory:** [").append(dir).append("](<file:///").append(dir).append(">)\n\n*This report was created on: ").append(today).append("*\n\n");
+            reportFileWriter.append("# Virus Total Report\n**This is a Virus Total report for all files that were not flagged by any security vendors from the directory:** [").append(dir).append("](</").append(dir).append(">)\n\n*This report was created on: ").append(today).append("*\n\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

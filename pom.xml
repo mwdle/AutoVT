@@ -20,11 +20,11 @@
       <artifactId>selenide</artifactId>
       <version>7.7.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-nop -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-nop</artifactId>
-      <version>2.0.13</version>
-      <scope>test</scope>
+      <version>2.0.16</version>
     </dependency>
   </dependencies>
 
@@ -33,7 +33,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <id>create-fat-jar</id>
@@ -45,7 +45,7 @@
               <transformers>
                 <!-- add Main-Class to manifest file -->
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>AutoVT</mainClass>
+                  <mainClass>com.mwdle.autovt.AutoVT</mainClass>
                 </transformer>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
               </transformers>

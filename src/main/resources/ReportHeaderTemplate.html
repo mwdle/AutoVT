@@ -1,0 +1,69 @@
+<!-- All instances of 'percent s' in this template are replaced with the appropriate values when the template is passed into String.format() at runtime -->
+<!doctype html>
+<title>VirusTotal Aggregated Report</title>
+<style>
+    body {
+        background-color: #14171a;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #d4d4d4;
+    }
+    header {
+        background-color: #1a202c;
+        padding: 50px;
+        margin-bottom: 20px;
+        border-radius: 1em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+    }
+    .separator {
+        border: none; border-top: 1px solid #3a3f44; width: 100%%; /* Extra percent sign because this template is passed into String.format() */
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+    }
+    h1 {
+        font-size: 33px;
+        margin-bottom: 0.25em;
+    }
+    p, a {
+        font-size: 16px;
+        margin-bottom: 0.5em;
+    }
+    a {
+        color: #6699cc;
+    }
+    .upload-result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2em;
+        padding: 1em;
+        border-radius: 0.5em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+    }
+    .upload-result h2 {
+        font-size: 21px;
+        margin-bottom: 0.5em;
+    }
+    .upload-result p {
+        margin: 0 0 1em 0;
+    }
+    .upload-result img {
+        width: 100%%; /* Extra percent sign because this template is passed into String.format() */
+        max-width: 750px;
+        margin-top: 1em;
+        border-radius: 0.5em;
+    }
+    .detections {
+        color: #cc3300;
+    }
+    .detections-no {
+        color: #009933;
+    }
+</style>
+<header>
+    <h1>VirusTotal %s Report</h1>
+    <p>
+        <strong>This is an aggregated VirusTotal report for all files that <em>%s</em> flagged as malicious from </strong><br>
+        <a target="_blank" href="%s">%s</a>
+    </p>
+    <p>This report was created <em>%s</em></p>
+</header>
